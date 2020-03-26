@@ -11,8 +11,8 @@ export ALLOW_MISSING_DEPENDENCIES=true
 # CCACHE UMMM!!! Cooks my builds fast
 echo -e "CCACHE is enabled for this build"
 export USE_CCACHE=1
-export CCACHE_DIR=/home/arriagagarciajc/ccache
-prebuilts/misc/linux-x86/ccache/ccache -M 30G
+CCACHE_EXEC=$(command -v ccache)
+export CCACHE_EXEC
 
 # Clean build
 echo -e "Cleaned SHIT"
