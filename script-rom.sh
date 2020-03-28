@@ -21,5 +21,5 @@ make clean && make clobber
 # Build ROM
 echo -e "BUILDING ROM :D"
 . build/envsetup.sh
-lunch aosp_lavender-userdebug
-mka aex -j8
+lunch aicp_lavender-userdebug
+make bacon -j8
