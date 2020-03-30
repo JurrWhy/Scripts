@@ -9,10 +9,11 @@ export KBUILD_BUILD_HOST="EroticHost"
 export ALLOW_MISSING_DEPENDENCIES=true
 
 # CCACHE UMMM!!! Cooks my builds fast
-echo -e "CCACHE is enabled for this build"
+echo -e ${blu}"CCACHE is enabled for this build"${txtrst}
+export CCACHE_EXEC=$(which ccache)
 export USE_CCACHE=1
-CCACHE_EXEC=$(command -v ccache)
-export CCACHE_EXEC
+export CCACHE_DIR=/home/arriagagarciajc/ccache
+ccache -M 30G
 
 # Clean build
 echo -e "Cleaned SHIT"
@@ -21,5 +22,5 @@ make clean && make clobber
 # Build ROM
 echo -e "BUILDING ROM :D"
 . build/envsetup.sh
-lunch aicp_lavender-userdebug
+lunch lineage_lavender-userdebug
 make bacon -j8
