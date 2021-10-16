@@ -22,5 +22,5 @@ make clean && make clobber
 # Build ROM
 echo -e "BUILDING ROM :D"
 . build/envsetup.sh
-lunch derp_surya-userdebug
-maka derp -8
+lunch aosip_surya-userdebug
+make kronic -j8
