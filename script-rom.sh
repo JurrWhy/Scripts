@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# Copyright (C) 2020 TheStrechh <carlosarriagacm@gmail.com>
+# Copyright (C) 2021 TheStrechh <carlosarriagacm@gmail.com>
 #
 
 # Export idk
@@ -16,7 +16,20 @@ export CCACHE_DIR=/home/charlyffag/ccache
 ccache -M 25G
 
 # Build ROM
-echo -e "BUILDING ROM :D"
+echo -e "What rom you want build?"
+echo -e "1) AOSiP 2) AospExtended"
 . build/envsetup.sh
-lunch aosip_surya-userdebug
-make kronic -j8
+read op
+if [ $op = 1 ]
+then
+  echo "You are building AOSiP!"
+  lunch aosip_surya-userdebug
+  make kronic -j8
+elif [ $op = 2 ]
+then
+  echo "You are building AospExtended!"
+  lunch aosp_surya-userdebug
+  make aex -j8
+else
+  echo "WTTTTTTTTF!"
+fi
