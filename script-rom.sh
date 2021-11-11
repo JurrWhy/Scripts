@@ -9,12 +9,13 @@ export KBUILD_BUILD_HOST="EroticHost"
 export ALLOW_MISSING_DEPENDENCIES=true
 
 # CCACHE UMMM!!! Cooks my builds fast
-export CCACHE_EXEC=$(which ccache)
-export USE_CCACHE=1
-export CCACHE_DIR=/home/charlyffag/ccache
-ccache -M 25G
+USE_CCACHE=1
+CCACHE_DIR="/home/charlyffag/ccache"
+CCACHE_EXEC="$(command -v ccache)"
+export USE_CCACHE CCACHE_DIR CCACHE_EXEC
+ccache -M 30G
 
 # Build ROM
 . build/envsetup.sh
-lunch aosp_surya-userdebug
-make aex -j8
+lunch lineage_surya-userdebug
+make bacon -j8
