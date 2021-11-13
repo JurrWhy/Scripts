@@ -9,10 +9,11 @@ export KBUILD_BUILD_HOST="EroticHost"
 export ALLOW_MISSING_DEPENDENCIES=true
 
 # CCACHE UMMM!!! Cooks my builds fast
-USE_CCACHE=1
-CCACHE_DIR="/home/charlyffag/ccache"
-CCACHE_EXEC="$(command -v ccache)"
-export USE_CCACHE CCACHE_DIR CCACHE_EXEC
+export CCACHE_EXEC="$(command -v ccache)"
+export CCACHE_SLOPPINESS=time_macros,include_file_mtime,file_macro
+export USE_CCACHE=true
+export CCACHE_DIR=/home/charlyffag/ccache
+export CCACHE_CPP2=yes
 ccache -M 30G
 
 # Build ROM
