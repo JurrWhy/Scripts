@@ -18,4 +18,4 @@ ccache -M 30G
 # Build ROM
 . build/envsetup.sh
 lunch lineage_surya-userdebug
-make bacon -j16
+time make bacon -j16
