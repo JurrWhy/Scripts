@@ -3,15 +3,19 @@
 # Copyright (C) 2021 TheStrechh <carlosarriagacm@gmail.com>
 #
 
+# Replace "root" with your own SSH Username in lowercase
+username=root
+
 # CCACHE UMMM!!! Cooks my builds fast
-export CCACHE_EXEC="$(command -v ccache)"
-export CCACHE_SLOPPINESS=time_macros,include_file_mtime,file_macro
-export USE_CCACHE=true
-export CCACHE_DIR=/root/ccache
-export CCACHE_CPP2=yes
-ccache -M 30G
+echo -e ${blu}"CCACHE is enabled for this build"${txtrst}
+export CCACHE_EXEC=$(which ccache)
+export USE_CCACHE=1
+export CCACHE_DIR=/root/ccache/$username
+ccache -M 40G
+
+# Prepare Environment and Device
+source build/envsetup.sh
+lunch lineage_surya-userdebug
 
 # Build ROM
-. build/envsetup.sh
-lunch lineage_surya-userdebug
-time make bacon -j16
+make bacon -j8
