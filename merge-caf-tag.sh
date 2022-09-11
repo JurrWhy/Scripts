@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# Copyright (C) 2022 TheStrechh (Carlos Arriaga)
+# Copyright (C) 2022-2023 TheStrechh (Carlos Arriaga)
 #
 # Basic scrip for merge CLO
 #

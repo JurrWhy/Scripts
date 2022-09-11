@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# Copyright (C) 2021 TheStrechh <carlosarriagacm@gmail.com>
+# Copyright (C) 2021-2023 TheStrechh <carlosarriagacm@gmail.com>
 #
 
 # Replace "root" with your own SSH Username in lowercase
