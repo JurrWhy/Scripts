@@ -5,7 +5,7 @@
 
 # Replace "root" with your own SSH Username in lowercase
 username=root
-romname=pixelos
+romname=pixelos-qpr1
 
 # CCACHE UMMM!!! Cooks my builds fast
 echo -e ${blu}"CCACHE is enabled for this build"${txtrst}
