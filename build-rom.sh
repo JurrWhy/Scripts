@@ -5,7 +5,7 @@
 
 # Replace "root" with your own SSH Username in lowercase
 username=root
-romname=awaken
+romname=pixelos
 
 # CCACHE UMMM!!! Cooks my builds fast
 echo -e ${blu}"CCACHE is enabled for this build"${txtrst}
@@ -16,7 +16,7 @@ ccache -M 40G
 
 # Prepare Environment and Device
 . build/envsetup.sh
-lunch awaken_marble-userdebug
+lunch aosp_marble-userdebug
 
 # Build ROM
-make bacon -j$(nproc --all)
+make bacon
