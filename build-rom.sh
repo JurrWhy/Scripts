@@ -15,8 +15,8 @@ export CCACHE_DIR=/$username/ccache/$romname
 ccache -M 40G
 
 # Prepare Environment and Device
-. build/envsetup.sh
-lunch aosp_marble-userdebug
+source build/envsetup.sh
+breakfast marble
 
 # Build ROM
-make bacon
+m pixelos
